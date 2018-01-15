@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Builder Test",
+            "runtimeExecutable": "builder",
+            "runtimeArgs": [
+                "run",
+                "builder-test"
+            ],
+            "args": ["--runInBand"],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "env": {
+                "NODE_ENV": "test"
+            },
+            "console": "internalConsole",
+            "sourceMaps": false
+        },      
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest Test",
+            "program": "${workspaceRoot}/node_modules/.bin/jest",
+            "args": ["-i", "--runInBand"],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "env": {
+                "NODE_ENV": "test"
+            },
+            "console": "internalConsole",
+            "sourceMaps": false
+        }
+    ]
+}
