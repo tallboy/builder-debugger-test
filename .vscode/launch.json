@@ -8,20 +8,23 @@
             "type": "node",
             "request": "launch",
             "name": "Builder Test",
-            "runtimeExecutable": "builder",
-            "runtimeArgs": [
+            "program": "${workspaceRoot}/node_modules/.bin/builder",
+            "runtimeArgs": [],
+            "args": [
                 "run",
-                "builder-test"
+                "jest",
+                "--",
+                "-i",
+                "--runInBand"
             ],
-            "args": ["--runInBand"],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": null,
             "env": {
                 "NODE_ENV": "test"
             },
-            "console": "internalConsole",
+            "console": "integratedTerminal",
             "sourceMaps": false
-        },      
+        },     
         {
             "type": "node",
             "request": "launch",
@@ -33,8 +36,19 @@
             "env": {
                 "NODE_ENV": "test"
             },
-            "console": "internalConsole",
+            "console": "integratedTerminal",
             "sourceMaps": false
-        }
+        },
+        {
+            "name": "Launch Jest via NPM",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script", "jest-test"
+            ],
+            "console": "integratedTerminal"
+        }     
     ]
 }

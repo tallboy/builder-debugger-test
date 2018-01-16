@@ -4,7 +4,8 @@
   "description": "VS Code sample project to test builder debugging",
   "main": "index.js",
   "scripts": {
-    "jest": "jest",
+    "jest": "node --inspect-brk -- jest",
+    "jest-test": "jest",
     "test": "builder run npm:test"
   },
   "repository": {
